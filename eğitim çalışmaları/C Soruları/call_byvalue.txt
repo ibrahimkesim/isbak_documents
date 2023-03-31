@@ -1,0 +1,28 @@
+
+void sum_digit( int *x) {
+  int sum = 0;
+
+while( *x != 0){
+  sum = sum + *x %10; //1210   1 2 1 
+  *x = *x/10; // 121   12  1 0 
+}
+
+
+ 
+}
+
+int main()
+{
+//  int ival = 15;
+
+//  printf(" ival sayilari toplami = %d", sum_digit(ival));
+//  printf(" ival sayilari toplami = %d", ival);
+
+ int pval = 1453;
+
+ //int *p = &pval;
+ printf(" pval sayilari toplami = %d", pval);
+ sum_digit(&pval);
+ printf(" pval sayilari toplami = %d", pval);
+
+}

@@ -1,0 +1,4 @@
+
+		
+		sol taraf değerleri const olmalı
+		sağ taraf dğerleri const olmadan içeriği değiştirilebiliyor.

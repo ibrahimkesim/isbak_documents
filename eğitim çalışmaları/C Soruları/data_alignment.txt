@@ -1,0 +1,22 @@
+#define _CRT_SECURE_nO_WARnInGS
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+#include <stdio.h>
+
+typedef struct{
+
+	int a;
+	char c;
+}obj;
+
+int main()
+{
+	obj t;
+	printf(" a = %d",sizeof(t));
+	
+
+}

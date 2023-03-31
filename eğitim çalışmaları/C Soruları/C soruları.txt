@@ -1,0 +1,295 @@
+
+//////////////////////////////////////////////////////////// çıktısı ne olur?
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <conio.h>
+//#include "nutility.h"
+#include <Windows.h>
+
+int main()
+{
+
+	int x=-1;
+	if(++x)
+		printf("x = %d", x);
+
+}
+//////////////////////////////////////////////////////////// sayi tek mi çift mi?
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <conio.h>
+//#include "nutility.h"
+#include <Windows.h>
+
+
+
+int main()
+{
+
+int ival;
+printf("bir tamsayi girin:");
+scanf("%d", &ival);
+
+if(ival % 2 == 0)
+	printf("%d cift sayi\n", ival);
+else
+	printf("%d tek sayi\n",ival);
+
+}
+///////////////////////////////////////////////////////////min-max bulma
+
+int main()
+{
+	int a[100] = {
+	928, 773, 918, 827, 453, 879, 667, 492, 524, 541,
+	335, 782, 239, 960, 814, 537, 191, 396, 218, 797,
+	693, 951, 962, 787,  40, 124, 328, 626, 497, 162,
+	967, 315, 283,  66, 620, 126, 336, 225, 508, 982,
+	575, 642,  79, 483, 394, 737, 539, 463, 911, 267,
+	100, 980, 581, 849, 139, 379, 698, 759, 501, 103,
+	218, 336, 693, 908, 379, 684, 412, 354, 295, 909,
+	328, 879, 625, 190,  19, 771, 507, 637, 357, 573,
+	456, 842, 948, 863, 173,  64, 140, 317,  86, 349,
+	594, 860, 838, 749, 485, 633, 702, 355,  71, 375,
+	};
+	int min = a[0];
+	int max = a[0];
+
+	for (int i = 1; i < 100; ++i) {
+		if (a[i] > max)
+			max = a[i];
+		else if (a[i] < min)
+			min = a[i];
+	}
+
+	printf("min = %d\n", min);
+	printf("max = %d\n", max);
+}
+////////////////////////////////////////////////////////
+
+artik yil
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <conio.h>
+//#include "nutility.h"
+#include <Windows.h>
+
+int isleap(int y)
+{
+	return y % 4 == 0 && (y % 100 != 0 || y % 400 == 0);
+}
+
+int main()
+{
+
+	int year;
+	printf("bir yil girin:");
+	scanf("%d", &year);
+
+	if(isleap(year))
+
+		printf("%d artik yil\n",year );
+	else 
+		printf("%d artik bir yil degil\n", year);
+
+}
+
+/////////////////////////////////////////////////////// ctype fonkdiyonları
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <ctype.h>
+
+
+int main()
+{
+	int ch;
+
+	printf("bir karakter girin:  ");
+	ch = getchar();
+
+	if (isupper(ch))
+		printf("isupper true\n");
+	else
+		printf("isupper false\n");
+
+	if (islower(ch))
+		printf("islower true\n");
+	else
+		printf("islower false\n");
+
+	if (isalpha(ch))
+		printf("isalpha true\n");
+	else
+		printf("isalpha false\n");
+
+	if (isdigit(ch))
+		printf("isdigit true\n");
+	else
+		printf("isdigit false\n");
+
+	if (isalnum(ch))
+		printf("isalnum true\n");
+	else
+		printf("isalnum false\n");
+
+	if (isxdigit(ch))
+		printf("isxdigit true\n");
+	else
+		printf("isxdigit false\n");
+
+	if (ispunct(ch))
+		printf("ispunct true\n");
+	else
+		printf("ispunct false\n");
+
+	if (isprint(ch))
+		printf("isprint true\n");
+	else
+		printf("isprint false\n");
+
+	if (isgraph(ch))
+		printf("isgraph true\n");
+	else
+		printf("isgraph false\n");
+
+	if (isspace(ch))
+		printf("isspace true\n");
+	else
+		printf("isspace false\n");
+
+	if (isblank(ch))
+		printf("isblank true\n");
+	else
+		printf("isblank false\n");
+
+	if (iscntrl(ch))
+		printf("iscntrl true\n");
+	else
+		printf("iscntrl false\n");
+
+}
+////////////////////////////////////////////// noktali virgül olomasdan Merhaba Dünya çıktısı
+#include <stdio.h>
+
+//cozum 1
+
+int main()
+{
+	if (printf("merhaba dunya\n"))
+	{ }
+}
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+
+//cozum 2
+
+int main()
+{
+	while (!printf("merhaba dunya\n"))
+	{ }
+}
+//----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+
+//cozum 3
+
+int main()
+{
+	switch(printf("merhaba dunya\n"))
+	{ }
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////hexa to decimal 
+int main()
+{
+    int ival;
+    int c;
+
+    printf(" bir tamsayi girin: ");
+    ival = 0;
+
+    while ((c = getchar()) != '\n'){
+        if(isdigit(c))
+            ival = ival * 16 + c - '0';
+        else if( isxdigit(c))
+            ival = ival * 16 + toupper(c) - 'A' + 10;
+
+    } 
+
+    printf("ival = %d\n", ival);
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////// küp alma
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+
+
+int power(int base, int exp)
+{
+	int result = 1;
+
+	while (exp--) {
+		result *= base;
+	}
+
+	return result;
+}
+
+
+int main()
+{
+	int x, y;
+	printf("iki tamsayi girin: ");
+	scanf("%d%d", &x, &y);
+
+	printf("%d sayisinin %d. kuvveti = %d\n", x, y, power(x, y));
+}
+
+//---------------------------------------------------------------------------------------------------- faktöriyel 
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+
+int factorial(int n)
+{
+	const int a[] = {
+		1,
+		2,
+		6,
+		24,
+		120,
+		720,
+		5040,
+		40320,
+		362880,
+		3628800,
+		39916800,
+		479001600 };
+
+	return a[n];
+}
+
+int main()
+{
+	int x;
+
+	printf("kac factorial : ");
+	scanf("%d", &x);
+	printf("%d! = %d\n", x, factorial(x));
+
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////Static anahtar sözcüğünün anlamı nedir?

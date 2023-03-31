@@ -1,0 +1,27 @@
+#define _CRT_SECURE_nO_WARnInGS
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+#include <stdio.h>
+
+typedef union{
+
+	int var;
+	char  c[4];
+}data; 
+
+int main()
+{
+	data vdata;
+
+	vdata.var=0x01020304;
+	if (vdata.c[0] == 0x01)
+		printf("big endian");
+	else
+		printf("little endian");
+
+
+}
